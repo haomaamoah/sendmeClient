@@ -1,0 +1,76 @@
+name: sendmeClient
+description: A delivery platform mobile application designed to connect transportation service providers to consumers.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 2.0.0+1
+
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  image_picker:
+  flutter:
+    sdk: flutter
+
+
+  cupertino_icons:
+  flutter_svg:
+  cloud_firestore: ^3.1.8
+  google_maps_flutter:
+  flutter_google_places:
+  firebase_core:
+  firebase_storage: ^10.2.7
+  google_maps_webservice:
+  country_code_picker:
+  intl:
+  url_launcher:
+  path_provider:
+  font_awesome_flutter:
+  autocomplete_textfield:
+  carousel_slider:
+  google_fonts:
+  location:
+  flutter_polyline_points:
+  geolocator:
+  geocoder:
+  geocoding:
+  introduction_screen:
+  provider:
+  hooks_riverpod:
+  shared_preferences:
+  modal_bottom_sheet: ^2.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+flutter:
+  uses-material-design: true
+
+  assets:
+     - assets/Icons/
+     - assets/svgIcons/
+     - assets/foods/
+
+  fonts:
+     - family: narrowblack
+       fonts:
+         - asset: assets/fonts/clan_ot_narrowblack.otf
+     - family: narrowbold
+       fonts:
+         - asset: assets/fonts/clan_ot_narrowbold.otf
+     - family: narrowbook
+       fonts:
+         - asset: assets/fonts/clan_ot_narrowbook.otf
+     - family: narrowmedium
+       fonts:
+         - asset: assets/fonts/clan_ot_narrowmedium.otf
+     - family: narrownews
+       fonts:
+         - asset: assets/fonts/clan_ot_narrownews.otf
+     - family: narrowthin
+       fonts:
+         - asset: assets/fonts/clan_ot_narrowthin.otf
+     - family: narrowultra
+       fonts:
+         - asset: assets/fonts/clan_ot_narrowultra.otf

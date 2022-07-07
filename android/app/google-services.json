@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "655825629594",
+    "project_id": "sendme-client",
+    "storage_bucket": "sendme-client.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:655825629594:android:8636276cb28d5241704a23",
+        "android_client_info": {
+          "package_name": "com.sendmeClient"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "655825629594-r8tdg6uvba57fu515lfq8vt2o3944g2t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sendmeClient",
+            "certificate_hash": "d5493519cccc0df7703b9587a4e2a94c7899d2cd"
+          }
+        },
+        {
+          "client_id": "655825629594-rauf8vbs1g9l57obn5ou8v966dqfcp5v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKAhH_Y3sJEBouR4vK3en350l62-rhNXc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "655825629594-rauf8vbs1g9l57obn5ou8v966dqfcp5v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
