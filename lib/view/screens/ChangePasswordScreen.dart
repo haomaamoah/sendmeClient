@@ -271,7 +271,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                                 });
                                 FocusScope.of(context).requestFocus(FocusNode());
                                 Navigator.push(context, MaterialPageRoute(
-                                    builder: (context)=>HomePage(errand)
+                                    builder: (context)=>HomeScreen(errand)
                                 ));
                               },
                               shape: RoundedRectangleBorder(

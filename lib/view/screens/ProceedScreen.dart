@@ -706,7 +706,7 @@ class _ProceedScreenState extends State<ProceedScreen> {
                                                 height: 48,
                                                 onPressed: (){
                                                   Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
-                                                      builder: (context)=>HomePage(widget.errand)
+                                                      builder: (context)=>HomeScreen(widget.errand)
                                                   ), (route) => false);
                                                 },
                                                 shape: RoundedRectangleBorder(

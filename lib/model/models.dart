@@ -1,20 +1,20 @@
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class Users {
-  String? fname,lname,uname,country,email,bday;
+  String? fname,lname,uid,country,email,bday,phone,pwd;
 
-  Users(this.fname,this.lname,this.uname,this.email,this.country,this.bday);
+  Users(this.fname,this.lname,this.uid,this.email,this.country,this.bday);
 
   Map<String,dynamic> toMap(){
     var map = <String, dynamic>{
-      'fname': fname,'lname': lname, 'uname': uname,
-      'email': email, 'country': country, 'bday': bday
+      'fname': fname,'lname': lname, 'uid': uid, 'pwd': pwd,
+      'email': email, 'country': country, 'bday': bday, 'phone': phone
     }; return map;
   }
 
   Users.fromMap(Map<String, dynamic> map){
-    fname = map['fname']; lname = map['lname']; uname = map['uname'];
-    email = map['email']; country = map['country']; bday = map['bday'];
+    fname = map['fname']; lname = map['lname']; uid = map['uid']; pwd = map['pwd'];
+    email = map['email']; country = map['country']; bday = map['bday']; phone = map['phone'];
   }
 }
 

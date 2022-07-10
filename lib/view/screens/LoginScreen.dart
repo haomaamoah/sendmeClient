@@ -285,7 +285,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                       onPressed: (){
                                         Users user; Errand? errand;
                                         Navigator.push(context, MaterialPageRoute(
-                                            builder: (context)=>HomePage(errand)
+                                            builder: (context)=>HomeScreen(errand)
                                         ));
                                       },
                                       shape: RoundedRectangleBorder(

@@ -59,7 +59,7 @@ class _MyDrawerState extends State<MyDrawer> {
                     SizedBox(width: 12,),
                     Container(
                       width: MediaQuery.of(context).size.width*0.2,
-                      child: Text(user!.uname ?? "",
+                      child: Text(user!.uid ?? "",
                         overflow: TextOverflow.ellipsis,
                         softWrap: false,
                         maxLines: 2,
@@ -82,7 +82,7 @@ class _MyDrawerState extends State<MyDrawer> {
                       InkWell(
                         onTap: (){
                           Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
-                              builder: (context)=>HomePage( errand)
+                              builder: (context)=>HomeScreen( errand)
                           ), (route) => false);
                         },
                         splashColor: Colors.transparent,

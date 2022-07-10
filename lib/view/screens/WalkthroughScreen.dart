@@ -1,34 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'main_screen.dart';
+import '../../model/const.dart';
+import 'LoginScreen.dart';
 
 
-class Walkthrough extends StatefulWidget {
+class WalkthroughScreen extends StatefulWidget {
   @override
-  _WalkthroughState createState() => _WalkthroughState();
+  _WalkthroughScreenState createState() => _WalkthroughScreenState();
 }
 
-class _WalkthroughState extends State<Walkthrough> {
+class _WalkthroughScreenState extends State<WalkthroughScreen> {
 
   List pageInfos = [
     {
-      "title": "Fresh Food",
-      "body": "We always serve food cooked with fresh vegetables from Ghanaian farmers as well as"
-          "fresh fish from Ghanaian fisherwomen.",
-      "img": "assets/foods/on1.png",
+      "title": "Need A Delivery Rider?",
+      "body": "You can SEND★ME with just a few clicks on your phone",
+      "img": Constants.imageIndex["packageIntro"],
     },
     {
-      "title": "Fast Delivery",
-      "body": "Our riders are highly trained in customer service."
-          "They are all licensed as well by the DVLA.",
-      "img": "assets/foods/on2.png",
+      "title": "Feeling Hungry?",
+      "body": "Order breakfast to lunch for both"
+          "local and international snacks and dishes",
+      "img": Constants.imageIndex["foodIntro"],
     },
     {
-      "title": "Easy Payment",
-      "body": "Payments can be made in cash or momo.",
-      "img": "assets/foods/on3.png",
+      "title": "Feeling Sick?",
+      "body": "Order medicine from accredited pharmacies and"
+          "have it safely delivered to your doorstep",
+      "img": Constants.imageIndex["medicineIntro"],
+    },
+    {
+      "title": "Need Your Trash Taken?",
+      "body": "Just SEND★ME by ordering on the app and"
+
+          "it will taken in less than 48 hours",
+      "img": Constants.imageIndex["trashIntro"],
     },
   ];
+
   @override
   Widget build(BuildContext context) {
     List<PageViewModel> pages = [
@@ -48,7 +57,7 @@ class _WalkthroughState extends State<Walkthrough> {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (BuildContext context){
-                    return MainScreen();
+                    return LoginScreen();
                   },
                 ),
               );
@@ -57,7 +66,7 @@ class _WalkthroughState extends State<Walkthrough> {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (BuildContext context){
-                    return MainScreen();
+                    return LoginScreen();
                   },
                 ),
               );

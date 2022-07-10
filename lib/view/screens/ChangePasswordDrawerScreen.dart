@@ -53,7 +53,7 @@ class _ChangePasswordDrawerScreenState extends State<ChangePasswordDrawerScreen>
           }
         });
         return Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
-            builder: (context)=>HomePage(errand)
+            builder: (context)=>HomeScreen(errand)
         ), (route) => false) as Future<bool>;
       },
       child:  SafeArea(child: Scaffold(
@@ -378,7 +378,7 @@ class _ChangePasswordDrawerScreenState extends State<ChangePasswordDrawerScreen>
                                   });
                                   FocusScope.of(context).requestFocus(FocusNode());
                                   Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
-                                      builder: (context)=>HomePage(errand)
+                                      builder: (context)=>HomeScreen(errand)
                                   ), (route) => false);
                                 },
                                 shape: RoundedRectangleBorder(

@@ -60,7 +60,7 @@ class _EditAccountScreenState extends State<EditAccountScreen> {
           }
         });
         return Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
-            builder: (context)=>HomePage(errand)
+            builder: (context)=>HomeScreen(errand)
         ), (route) => false) as Future<bool>;
       },
       child: SafeArea(child: Scaffold(
@@ -580,9 +580,9 @@ class _EditAccountScreenState extends State<EditAccountScreen> {
                                       onPressed: () {
                                         Users user = Users(fnameCtrl.text, lnameCtrl.text, unameCtrl.text, emailCtrl.text, countryCtrl, null);
                                         Errand? errand;
-                                        FileUtils.saveToFile('${user.fname}||${user.lname}||${user.uname}||${user.email}||${user.country}').then(
+                                        FileUtils.saveToFile('${user.fname}||${user.lname}||${user.uid}||${user.email}||${user.country}').then(
                                                 (value) => Navigator.pushReplacement(context,
-                                                    MaterialPageRoute(builder: (context) => HomePage(errand)))
+                                                    MaterialPageRoute(builder: (context) => HomeScreen(errand)))
                                         );
 
                                       },

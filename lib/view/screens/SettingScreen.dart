@@ -33,7 +33,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           }
         });
         return Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
-            builder: (context)=>HomePage(errand)
+            builder: (context)=>HomeScreen(errand)
         ), (route) => false) as Future<bool>;
       },
       child:  SafeArea(child: Scaffold(

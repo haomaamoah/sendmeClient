@@ -14,13 +14,14 @@ dependencies:
     sdk: flutter
 
 
-  cupertino_icons:
-  flutter_svg:
   cloud_firestore: ^3.1.8
-  google_maps_flutter:
-  flutter_google_places:
+  connectivity_plus:
+  firebase_auth:
   firebase_core:
   firebase_storage: ^10.2.7
+  flutter_google_places:
+  flutter_svg:
+  google_maps_flutter:
   google_maps_webservice:
   country_code_picker:
   intl:
@@ -37,6 +38,7 @@ dependencies:
   geocoding:
   introduction_screen:
   provider:
+  flutter_hooks:
   hooks_riverpod:
   shared_preferences:
   modal_bottom_sheet: ^2.0.1
@@ -50,7 +52,6 @@ flutter:
   assets:
      - assets/Icons/
      - assets/svgIcons/
-     - assets/foods/
 
   fonts:
      - family: narrowblack

@@ -170,7 +170,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
           }
         });
         return Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
-            builder: (context)=>HomePage(errand)
+            builder: (context)=>HomeScreen(errand)
         ), (route) => false) as Future<bool>;
       },
       child: SafeArea(child: SafeArea(

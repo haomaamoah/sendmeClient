@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../util/const.dart';
-import 'walkthrough.dart';
+import '../../view/screens/WalkthroughScreen.dart';
 
 
 class SplashScreen extends StatefulWidget {
@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (BuildContext context){
-          return Walkthrough();
+          return WalkthroughScreen();
         },
       ),
     );

@@ -67,5 +67,22 @@ class Constants{
     "trashIntro" : "assets/Icons/trash_intro.png",
   };
 
+  static const  MaterialColor myColor = const MaterialColor(
+      0xFFF54D6E,
+      const <int, Color>{
+        50: const Color(0xFFF54D6E),
+        100: const Color(0xFFF54D6E),
+        200: const Color(0xFFF54D6E),
+        300: const Color(0xFFF54D6E),
+        400: const Color(0xFFF54D6E),
+        500: const Color(0xFFF54D6E),
+        600: const Color(0xFFF54D6E),
+        700: const Color(0xFFF54D6E),
+        800: const Color(0xFFF54D6E),
+        900: const Color(0xFFF54D6E),
+      }
+  );
+
+
 
 }

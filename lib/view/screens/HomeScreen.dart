@@ -14,15 +14,15 @@ import 'DeliveryDetailsScreen.dart';
 import 'MyDrawer.dart';
 const ApiKey = "AIzaSyAmFaNms8idXBGOGC26JFJPcWesL3jML-Q";
 
-class HomePage extends StatefulWidget {
-  Errand? errand;
-  HomePage(Errand? errand){this.errand=errand;}
+class HomeScreen extends StatefulWidget {
+  late Errand? errand;
+  HomeScreen(Errand? errand){this.errand=errand;}
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeScreenState extends State<HomeScreen> {
 
   final GlobalKey<ScaffoldState> mainDrawerKey = GlobalKey<ScaffoldState>();
 
@@ -1525,7 +1525,7 @@ class _HomePageState extends State<HomePage> {
 
   Route _PolyMapRoute(Errand errand) {
     return  PageRouteBuilder(
-      pageBuilder: (context, animation, secondaryAnimation) => HomePage(errand),
+      pageBuilder: (context, animation, secondaryAnimation) => HomeScreen(errand),
       transitionDuration: Duration(milliseconds: 200),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         var begin = Offset(1.0, 0.0);

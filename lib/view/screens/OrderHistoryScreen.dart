@@ -45,7 +45,7 @@ class _OrderHistoryScreenState extends State<OrderHistoryScreen> {
           }
         });
         return Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
-          builder: (context)=>HomePage(errand)
+          builder: (context)=>HomeScreen(errand)
         ), (route) => false) as Future<bool>;
       },
       child: SafeArea(child: SafeArea(
