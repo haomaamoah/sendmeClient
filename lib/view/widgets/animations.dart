@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import '../../model/const.dart';
 
-class AnimatedRiderLogo extends StatefulWidget{
-  AnimatedRiderLogo({Key? key}) : super(key: key);
+class BreathingLogo extends StatefulWidget{
+  final double size;
+  final String image;
+  BreathingLogo({Key? key,required this.image, required this.size});
 
   @override
-  State<AnimatedRiderLogo> createState() => _AnimatedRiderLogoState();
+  State<BreathingLogo> createState() => _BreathingLogoState();
 }
 
-class _AnimatedRiderLogoState extends State<AnimatedRiderLogo> with TickerProviderStateMixin{
+class _BreathingLogoState extends State<BreathingLogo> with SingleTickerProviderStateMixin{
   double breathingValue = 0;
   late AnimationController breathingController;
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    breathingController = AnimationController(vsync: this,duration: Duration(seconds: 1));
-    breathingController
+    breathingController = AnimationController(vsync: this,duration: Duration(seconds: 1))
       ..addStatusListener((status) {
         switch (status){
           case AnimationStatus.dismissed:
@@ -30,7 +30,9 @@ class _AnimatedRiderLogoState extends State<AnimatedRiderLogo> with TickerProvid
           case AnimationStatus.reverse: break;
         }
       })
-      ..addStatusListener((status)=>setState(()=>breathingValue = breathingController.value));
+      ..addStatusListener((status){
+        if(mounted)setState(()=>breathingValue = breathingController.value);
+      });
     breathingController.forward();
 
   }
@@ -38,13 +40,14 @@ class _AnimatedRiderLogoState extends State<AnimatedRiderLogo> with TickerProvid
   @override
   void dispose() {
     // TODO: implement dispose
-    super.dispose();
     breathingController.dispose();
+    super.dispose();
+
   }
 
   @override
   Widget build(BuildContext context) {
-    double riderImageSize = MediaQuery.of(context).size.width*0.6 - 10 * breathingValue;
+    double riderImageSize = widget.size - 10 * breathingValue;
 
 
     return AnimatedContainer(
@@ -53,7 +56,7 @@ class _AnimatedRiderLogoState extends State<AnimatedRiderLogo> with TickerProvid
       decoration: BoxDecoration(
           image: DecorationImage(
               fit: BoxFit.fill,
-              image: AssetImage(Constants.imageIndex["riderSplash"] as String)
+              image: AssetImage(widget.image)
           )
       ), duration: Duration(seconds: 1),
     );
@@ -71,7 +74,7 @@ class RotatingDeliveryOptionIcon extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    AnimationController rotationController = useAnimationController(duration: Duration(seconds: 10));
+    AnimationController rotationController = useAnimationController(duration: Duration(seconds: 20));
     rotationController.repeat();
     return Column(
       children: [

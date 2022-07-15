@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:math';
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -18,10 +19,26 @@ class SplashScreen extends StatefulHookWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen>{
+  // final Shader linearGradient = LinearGradient(
+  //   colors: <Color>[Colors.black,Colors.red, Colors.pink,Colors.black],
+  // ).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
 
-  final Shader linearGradient = LinearGradient(
-    colors: <Color>[Colors.black,Colors.red, Colors.pink,Colors.black],
-  ).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
+  final colorizeColors = [
+    Colors.black,Colors.red,
+    Colors.purple,
+    Colors.blue,
+    Colors.yellow,
+    Colors.red,
+    Colors.pink,
+  ];
+
+  final colorizeTextStyle = TextStyle(
+    fontSize: 50.0,
+    fontFamily: 'narrowmedium',
+    letterSpacing: 10,fontWeight: FontWeight.w600
+    //foreground: Paint()..shader = linearGradient,
+  );
+
   List<Color> colors = [Colors.pink,Colors.blue,Colors.amber,Colors.purple,Colors.green,Colors.indigo,Colors.red,Colors.orange,Colors.yellow];
   late Color color1,color2,color3,color4;
   late Timer timer;
@@ -29,16 +46,18 @@ class _SplashScreenState extends State<SplashScreen>{
   Stream<ConnectivityResult> subscription = Connectivity().onConnectivityChanged;
 
   Future<void> checkIfUserIsLoggedIn()async{
-    if (FirebaseAuth.instance.currentUser != null) {
-      timer = Timer.periodic(Duration(seconds:1), (timer){
-        if(timer.tick == 5){launchApp();timer.cancel();}
-      });
-    }
-    else{
-      WidgetsBinding.instance.addPostFrameCallback((_){
-        Navigator.of(context).pushReplacement(BouncyPageRoute(widget: WalkthroughScreen()));
-      });
-    }
+    timer = Timer.periodic(Duration(seconds:1), (timer){
+      if(timer.tick == 15){
+        if (FirebaseAuth.instance.currentUser != null) {
+          launchApp();timer.cancel();
+        }
+        else{
+          WidgetsBinding.instance.addPostFrameCallback((_){
+            Navigator.of(context).pushReplacement(BouncyPageRoute(widget: WalkthroughScreen()));
+          });
+        }
+      }
+    });
   }
 
   Future<void> launchApp () async {
@@ -64,7 +83,6 @@ class _SplashScreenState extends State<SplashScreen>{
       RotatingDeliveryOptionIcon(image: Constants.imageIndex["trashSplash"] as String, subtitle: 'Trash',color: color4),
     ];
 
-    checkIfUserIsLoggedIn();
 
 
   }
@@ -73,6 +91,8 @@ class _SplashScreenState extends State<SplashScreen>{
   @override
   Widget build(BuildContext context) {
 
+
+    checkIfUserIsLoggedIn();
     return SafeArea(child: Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
@@ -99,20 +119,23 @@ class _SplashScreenState extends State<SplashScreen>{
                       padding: const EdgeInsets.only(top: 25,bottom: 30,right: 20,left: 20),
                       child: Column(
                         children: [
-                          Text(
-                            "SEND★ME",
-                            style: TextStyle(
-                                fontSize: 50,letterSpacing: 10,
-                                fontFamily: 'narrowmedium',
-                                foreground: Paint()..shader = linearGradient,
-                            ),
-                            textAlign: TextAlign.center,
+                          AnimatedTextKit(
+                            repeatForever: true,
+                            pause: Duration(seconds: 0),
+                            animatedTexts: [
+                              ColorizeAnimatedText(
+                                "SEND★ME",speed: Duration(seconds: 2),
+                                textStyle: colorizeTextStyle,
+                                colors: colorizeColors,
+                              ),
+                            ],
+                            isRepeatingAnimation: true,
                           ),
                           Text(
                             "\nMY",
                             style: TextStyle(
                               color: Color(0xFF787878),
-                              fontSize: 25,
+                              fontSize: 25,fontWeight: FontWeight.w600,
                               fontFamily: 'narrowmedium',
                             ),
                             textAlign: TextAlign.center,
@@ -137,7 +160,7 @@ class _SplashScreenState extends State<SplashScreen>{
             alignment: Alignment.topCenter,
             child: Padding(
               padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
-              child: AnimatedRiderLogo(),
+              child: BreathingLogo(image: "${Constants.imageIndex["riderSplash"]}",size: MediaQuery.of(context).size.width*0.6,),
             )
           ),
           Align(
