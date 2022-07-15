@@ -14,6 +14,9 @@ dependencies:
     sdk: flutter
 
 
+  animated_text_kit:
+  autocomplete_textfield:
+  carousel_slider:
   cloud_firestore: ^3.1.8
   connectivity_plus:
   firebase_auth:
@@ -28,8 +31,6 @@ dependencies:
   url_launcher:
   path_provider:
   font_awesome_flutter:
-  autocomplete_textfield:
-  carousel_slider:
   google_fonts:
   location:
   flutter_polyline_points:
